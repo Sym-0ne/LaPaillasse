@@ -39,6 +39,17 @@ def bonjour():
 
 :smile: :rocket: :+1: ":le smiley:"
 
+=== "Python"
+    ```python
+    print("Hello Python")
+    ```
+
+=== "C"
+    ```c
+    printf("Hello C");
+    ```
+
+
 
 
 
