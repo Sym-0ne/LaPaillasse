@@ -1,4 +1,8 @@
 site_name: My Docs
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 theme : 
   name : material
   palette:
