@@ -2,6 +2,7 @@ site_name: My Docs
 markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed
 
 theme : 
   name : material
