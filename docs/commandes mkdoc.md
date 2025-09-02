@@ -37,6 +37,7 @@ def bonjour():
 ```
 "trois fois ` au début et a la fin du bloc de code"
 
+:smile: :rocket: :+1: ":le smiley:"
 
 
 
