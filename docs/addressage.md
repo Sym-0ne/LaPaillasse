@@ -10,7 +10,8 @@ Blois (BLO) : 172.28.128-159.0 / 19 <br>
 
 adresse de l'hyperviseur (Nutanix) : 172.16.90.200:9440 <br>
 
-Pour se connecter : 
+Pour se connecter : <br>
 
-"nom de session"@lan.sio.lyceefulbert.fr
-mot de passe de session
+"nom de session"@lan.sio.lyceefulbert.fr <br>
+
+mot de passe de session <br>
