@@ -117,12 +117,12 @@ Elle couvre les points suivants :
 
 3. Créer un utilisateur administrateur :<br>
    ```[HP] local-user admin
-```
-   ```[HP-luser-admin] password simple MonMotDePasseFort```
 
-   ```[HP-luser-admin] service-type ssh```
+   [HP-luser-admin] password simple MonMotDePasseFort
+
+   [HP-luser-admin] service-type ssh
    
-   ```[HP-luser-admin] authorization-attribute level 3```
+   [HP-luser-admin] authorization-attribute level 3```
    
 4. Configurer les sessions VTY pour n’autoriser que SSH :<br>
 
