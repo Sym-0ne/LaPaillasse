@@ -107,7 +107,6 @@ Elle couvre les points suivants :
 ## 🔐 Étape 5 : Activer et sécuriser l’accès SSH
 
 1. Générer les clés RSA pour SSH :<br>
-
    ```[HP] public-key local create rsa
    ```
 
@@ -116,13 +115,15 @@ Elle couvre les points suivants :
    ```
 
 3. Créer un utilisateur administrateur :<br>
+
    ```[HP] local-user admin
 
    [HP-luser-admin] password simple MonMotDePasseFort
 
    [HP-luser-admin] service-type ssh
    
-   [HP-luser-admin] authorization-attribute level 3```
+   [HP-luser-admin] authorization-attribute level 3
+   ```
    
 4. Configurer les sessions VTY pour n’autoriser que SSH :<br>
 
@@ -134,6 +135,7 @@ Elle couvre les points suivants :
    ```
    ```[HP-ui-vty0-4] quit
    ```
+
 👉 Ainsi, Telnet est désactivé et seul SSH est autorisé.
 
 ## ✅ Étape 6 : Vérifications et tests
