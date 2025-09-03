@@ -80,7 +80,7 @@ Elle couvre les points suivants :
    ```
    ```[HP-irf-port2/1] quit
    ```
-   
+
 5. Activer la configuration IRF et redémarrer :
    ```[HP] irf-port-configuration active
    ```
@@ -150,12 +150,14 @@ Elle couvre les points suivants :
 
 1. Vérifier l’état du stack IRF :
 
-```<HP> display irf
+```
+<HP> display irf
 ```
 
 2. Vérifier l’adresse IP du VLAN de management :
 
-```<HP> display ip interface brief
+```
+<HP> display ip interface brief
 ```
 
 3. Depuis un poste client, tester l’accès SSH :
