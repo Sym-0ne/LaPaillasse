@@ -5,7 +5,7 @@ Elle couvre les points suivants :
 
 - Connexion au switch via le port console depuis Linux Mint  
 - Réinitialisation de la configuration (factory reset)  
-- Configuration d’un stack (IRF)
+- Configuration d’un stack IRF (Intelligent Resilient Framework)
 - Mise en place d’un VLAN de management (VLAN 120)  
 - Activation de l’accès SSH pour l’administration  
 
@@ -27,10 +27,11 @@ Elle couvre les points suivants :
 4. Lancer la session console :sudo minicom -D /dev/ttyUSB0 -b 9600
 
 ⚙️ Paramètres de connexion série :
-    • Vitesse : 9600 bauds
-    • Data bits : 8
-    • Parité : aucune
-    • Stop bits : 1
+
+- Vitesse : 9600 bauds
+- Data bits : 8
+- Parité : aucune
+- Stop bits : 1
 
 ## 🔄 Réinitialisation de la configuration (Factory Reset)
 
@@ -38,10 +39,13 @@ Elle couvre les points suivants :
 2. Interrompre le boot avec Ctrl+B.
 3. Entrer le mot de passe bootrom (souvent vide ou password).
 4. Choisir l’option Skip current configuration.
-5. Une fois démarré, supprimer la configuration existante :<br>
-    <HP> reset saved-configuration<br>
-6. Redémarrer :<br>
-    <HP> reboot<br>
+5. Une fois démarré, supprimer la configuration existante :
+    ```<HP> reset saved-configuration
+    ```
+
+6. Redémarrer :
+    ```<HP> reboot
+    ```
 
 👉 Le switch redémarre avec la configuration d’usine.
 
@@ -55,11 +59,14 @@ Elle couvre les points suivants :
 
     [HP] irf member 1 renumber 2   ← deuxième switch
     ```
-3. Sauvegarder et redémarrer :<br>
+3. Sauvegarder et redémarrer :
+
     ```[HP] save
     ```
+
 4. Configurer les ports IRF :<br>
     ```[HP] system-view
+   
 
     [HP] irf-port 1/1
 
