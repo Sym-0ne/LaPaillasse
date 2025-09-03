@@ -5,7 +5,7 @@ Elle couvre les points suivants :
 
 - Connexion au switch via le port console depuis Linux Mint  
 - Réinitialisation de la configuration (factory reset)  
-- Configuration d’un stack 
+- Configuration d’un stack (IRF)
 - Mise en place d’un VLAN de management (VLAN 120)  
 - Activation de l’accès SSH pour l’administration  
 
@@ -55,7 +55,7 @@ Elle couvre les points suivants :
     [HP] save<br>
 4. Configurer les ports IRF :<br>
     [HP] system-view<br>
-    [HP] irf-port 1/1<br>
+    [HP] irf-port 1/1<br><br>
     [HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49<br>
     [HP-irf-port1/1] quit<br>
     [HP] irf-port 2/1<br>
@@ -83,3 +83,33 @@ Elle couvre les points suivants :
 👉 Ce VLAN servira exclusivement pour l’administration.
 
 ## 🔐 Étape 5 : Activer et sécuriser l’accès SSH
+
+1. Générer les clés RSA pour SSH :<br>
+   [HP] public-key local create rsa<br>
+2. Activer le service SSH (stelnet) :<br>
+   [HP] stelnet server enable<br>
+3. Créer un utilisateur administrateur :<br>
+   [HP] local-user admin<br>
+   [HP-luser-admin] password simple MonMotDePasseFort<br>
+   [HP-luser-admin] service-type ssh<br>
+   [HP-luser-admin] authorization-attribute level 3<br>
+4. Configurer les sessions VTY pour n’autoriser que SSH :<br>
+   [HP] user-interface vty 0 4<br>
+   [HP-ui-vty0-4] authentication-mode scheme<br>
+   [HP-ui-vty0-4] protocol inbound ssh<br>
+   [HP-ui-vty0-4] quit<br>
+
+👉 Ainsi, Telnet est désactivé et seul SSH est autorisé.
+
+## ✅ Étape 6 : Vérifications et tests
+
+1. Vérifier l’état du stack IRF :<br>
+<HP> display irf<br>
+2. Vérifier l’adresse IP du VLAN de management :<br>
+<HP> display ip interface brief<br>
+3. Depuis un poste client, tester l’accès SSH :<br>
+ssh admin@192.168.120.10<br>
+
+👉 Si tout est correct, la connexion doit s’établir en SSH avec l’utilisateur admin.
+
+
