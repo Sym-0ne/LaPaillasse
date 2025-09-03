@@ -110,12 +110,14 @@ Elle couvre les points suivants :
 
    ```[HP] public-key local create rsa
    ```
+
 2. Activer le service SSH (stelnet) :<br>
    ```[HP] stelnet server enable
    ```
+
 3. Créer un utilisateur administrateur :<br>
    ```[HP] local-user admin
-
+```
    ```[HP-luser-admin] password simple MonMotDePasseFort```
 
    ```[HP-luser-admin] service-type ssh```
@@ -140,11 +142,14 @@ Elle couvre les points suivants :
 
 ```<HP> display irf
 ```
+
 2. Vérifier l’adresse IP du VLAN de management :<br>
+
 ```<HP> display ip interface brief
 ```
 
 3. Depuis un poste client, tester l’accès SSH :<br>
+
 ```ssh admin@192.168.120.10
 ```
 
