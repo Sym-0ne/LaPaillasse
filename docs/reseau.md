@@ -52,34 +52,35 @@ Elle couvre les points suivants :
 ## 🖇 Configuration d’un stack IRF (Intelligent Resilient Framework)
 
 1. Vérifier que les deux switchs ont la même version logicielle.
-2. Configurer l’ID IRF sur chaque switch :<br>
-    ```<HP> system-view
+2. Configurer l’ID IRF sur chaque switch :
+   ```<HP> system-view
+   ```
+   ```[HP] irf member 1 renumber 1   ← premier switch
+   ```
+   ```[HP] irf member 1 renumber 2   ← deuxième switch
+   ```
 
-    [HP] irf member 1 renumber 1   ← premier switch
-
-    [HP] irf member 1 renumber 2   ← deuxième switch
-    ```
 3. Sauvegarder et redémarrer :
 
     ```[HP] save
     ```
 
 4. Configurer les ports IRF :<br>
-    ```[HP] system-view
+   ```[HP] system-view
+   ```
+   ```[HP] irf-port 1/1
+   ```
+   ```[HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49
+   ``` 
+   ```[HP-irf-port1/1] quit
+   ```
+   ```[HP] irf-port 2/1
+   ```
+   ```[HP-irf-port2/1] port group interface Ten-GigabitEthernet2/0/49
+   ```
+   ```[HP-irf-port2/1] quit
+   ```
    
-
-    [HP] irf-port 1/1
-
-    [HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49
-    
-    [HP-irf-port1/1] quit
-
-    [HP] irf-port 2/1
-
-    [HP-irf-port2/1] port group interface Ten-GigabitEthernet2/0/49
-
-    [HP-irf-port2/1] quit
-    ```
 5. Activer la configuration IRF et redémarrer :
    ```[HP] irf-port-configuration active
    ```
@@ -113,26 +114,26 @@ Elle couvre les points suivants :
 
 ## 🔐 Étape 5 : Activer et sécuriser l’accès SSH
 
-1. Générer les clés RSA pour SSH :<br>
+1. Générer les clés RSA pour SSH :
    ```[HP] public-key local create rsa
    ```
 
-2. Activer le service SSH (stelnet) :<br>
+2. Activer le service SSH (stelnet) :
    ```[HP] stelnet server enable
    ```
 
-3. Créer un utilisateur administrateur :<br>
+3. Créer un utilisateur administrateur :
 
    ```[HP] local-user admin
-
-   [HP-luser-admin] password simple MonMotDePasseFort
-
-   [HP-luser-admin] service-type ssh
-   
-   [HP-luser-admin] authorization-attribute level 3
+   ```
+   ```[HP-luser-admin] password simple MonMotDePasseFort
+   ```
+   ```[HP-luser-admin] service-type ssh
+   ```
+   ```[HP-luser-admin] authorization-attribute level 3
    ```
    
-4. Configurer les sessions VTY pour n’autoriser que SSH :<br>
+4. Configurer les sessions VTY pour n’autoriser que SSH :
 
    ```[HP] user-interface vty 0 4
    ```
@@ -147,17 +148,17 @@ Elle couvre les points suivants :
 
 ## ✅ Étape 6 : Vérifications et tests
 
-1. Vérifier l’état du stack IRF :<br>
+1. Vérifier l’état du stack IRF :
 
 ```<HP> display irf
 ```
 
-2. Vérifier l’adresse IP du VLAN de management :<br>
+2. Vérifier l’adresse IP du VLAN de management :
 
 ```<HP> display ip interface brief
 ```
 
-3. Depuis un poste client, tester l’accès SSH :<br>
+3. Depuis un poste client, tester l’accès SSH :
 
 ```ssh admin@192.168.120.10
 ```
