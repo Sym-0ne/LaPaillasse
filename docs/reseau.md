@@ -119,7 +119,7 @@ Elle couvre les points suivants :
    ```
 
 2. Activer le service SSH (stelnet) :
-   ```[HP] stelnet server enable
+   ```[HPSwitch] ssh server enable
    ```
 
 3. Créer un utilisateur administrateur :
