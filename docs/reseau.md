@@ -22,6 +22,7 @@ Elle couvre les points suivants :
 2. Identifier le port série :<br>
    ```bash 
    dmesg | grep ttyUSB
+   ```
 3. Installer un client console (exemple : minicom) : sudo apt install minicom
 4. Lancer la session console :sudo minicom -D /dev/ttyUSB0 -b 9600
 
