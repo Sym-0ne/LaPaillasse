@@ -19,8 +19,8 @@ Elle couvre les points suivants :
 
 ### Étapes
 1. Brancher le câble console entre le PC et le switch.  
-2. Identifier le port série :
-   ```bash
+2. Identifier le port série :<br>
+   ```bash 
    dmesg | grep ttyUSB
 3. Installer un client console (exemple : minicom) : sudo apt install minicom
 4. Lancer la session console :sudo minicom -D /dev/ttyUSB0 -b 9600
@@ -37,48 +37,48 @@ Elle couvre les points suivants :
 2. Interrompre le boot avec Ctrl+B.
 3. Entrer le mot de passe bootrom (souvent vide ou password).
 4. Choisir l’option Skip current configuration.
-5. Une fois démarré, supprimer la configuration existante :
-    <HP> reset saved-configuration
-6. Redémarrer :
-    <HP> reboot
+5. Une fois démarré, supprimer la configuration existante :<br>
+    <HP> reset saved-configuration<br>
+6. Redémarrer :<br>
+    <HP> reboot<br>
 
 👉 Le switch redémarre avec la configuration d’usine.
 
 ## 🖇 Configuration d’un stack IRF (Intelligent Resilient Framework)
 
 1. Vérifier que les deux switchs ont la même version logicielle.
-2. Configurer l’ID IRF sur chaque switch :
-    <HP> system-view
-    [HP] irf member 1 renumber 1   ← premier switch
-    [HP] irf member 1 renumber 2   ← deuxième switch
-3. Sauvegarder et redémarrer :
-    [HP] save
-4. Configurer les ports IRF :
-    [HP] system-view
-    [HP] irf-port 1/1
-    [HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49
-    [HP-irf-port1/1] quit
-    [HP] irf-port 2/1
-    [HP-irf-port2/1] port group interface Ten-GigabitEthernet2/0/49
-    [HP-irf-port2/1] quit
+2. Configurer l’ID IRF sur chaque switch :<br>
+    <HP> system-view<br>
+    [HP] irf member 1 renumber 1   ← premier switch<br>
+    [HP] irf member 1 renumber 2   ← deuxième switch<br>
+3. Sauvegarder et redémarrer :<br>
+    [HP] save<br>
+4. Configurer les ports IRF :<br>
+    [HP] system-view<br>
+    [HP] irf-port 1/1<br>
+    [HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49<br>
+    [HP-irf-port1/1] quit<br>
+    [HP] irf-port 2/1<br>
+    [HP-irf-port2/1] port group interface Ten-GigabitEthernet2/0/49<br>
+    [HP-irf-port2/1] quit<br>
 5. Activer la configuration IRF et redémarrer :
-    [HP] irf-port-configuration active
-    [HP] save
-    [HP] reboot
+    [HP] irf-port-configuration active<br>
+    [HP] save<br>
+    [HP] reboot<br>
 
 ## 🌐 Étape 4 : Création d’un VLAN de management (VLAN 120)
 
-1. Créer le VLAN 120 :
-    [HP] vlan 120
-    [HP-vlan120] quit
-2. Créer l’interface VLAN et attribuer une adresse IP libre :
-    [HP] interface Vlan-interface 120
-    [HP-Vlan-interface120] ip address 192.168.120.10 255.255.255.0
-    [HP-Vlan-interface120] quit
-3. Associer un port physique au VLAN 120 :
-    [HP] interface GigabitEthernet1/0/1
-    [HP-GigabitEthernet1/0/1] port link-type access
-    [HP-GigabitEthernet1/0/1] port access vlan 120
+1. Créer le VLAN 120 :<br>
+    [HP] vlan 120<br>
+    [HP-vlan120] quit<br>
+2. Créer l’interface VLAN et attribuer une adresse IP libre :<br>
+    [HP] interface Vlan-interface 120<br>
+    [HP-Vlan-interface120] ip address 192.168.120.10 255.255.255.0<br>
+    [HP-Vlan-interface120] quit<br>
+3. Associer un port physique au VLAN 120 :<br>
+    [HP] interface GigabitEthernet1/0/1<br>
+    [HP-GigabitEthernet1/0/1] port link-type access<br>
+    [HP-GigabitEthernet1/0/1] port access vlan 120<br>
 
 👉 Ce VLAN servira exclusivement pour l’administration.
 
