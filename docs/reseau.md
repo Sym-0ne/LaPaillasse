@@ -19,31 +19,25 @@ Elle couvre les points suivants :
 
 ### Étapes
 1. Brancher le câble console entre le PC et le switch.  
-2. Identifier le port série :<br>
-   ```bash 
-   dmesg | grep ttyUSB
-   ```
-3. Installer un client console (exemple : minicom) : sudo apt install minicom
-4. Lancer la session console :sudo minicom -D /dev/ttyUSB0 -b 9600
 
-⚙️ Paramètres de connexion série :
+   ⚠️ Linux Mint ne supporte pas les Switchs HP dû à un problème d'OS, donc il faut utiliser le Laptot Windows XP afin de configurer les équipements HP sans problèmes.
 
-- Vitesse : 9600 bauds
-- Data bits : 8
-- Parité : aucune
-- Stop bits : 1
+   Utiliser Putty sur le laptop et la connexion fonctionne directement.
 
 ## 🔄 Réinitialisation de la configuration (Factory Reset)
 
-1. Redémarrer le switch.
-2. Interrompre le boot avec Ctrl+B.
-3. Entrer le mot de passe bootrom (souvent vide ou password).
-4. Choisir l’option Skip current configuration.
-5. Une fois démarré, supprimer la configuration existante :
+1. Une fois démarré, supprimer la configuration existante :
     ```<HP> reset saved-configuration
     ```
+   Si cette commande ne supprime pas correctement la conf, il faut les supprimés manuellement un par un : 
+   ```<HP> delete "nom du fichier de conf à supprimer" 
+    ```
 
-6. Redémarrer :
+2. Enregistrer : 
+   ```<HP> save force 
+    ```
+
+3. Redémarrer :
     ```<HP> reboot
     ```
 
@@ -144,7 +138,7 @@ Elle couvre les points suivants :
 2. Créer l’interface VLAN et attribuer une adresse IP libre :<br>
    ```[HP] interface Vlan-interface 120
    ```
-   ```[HP-Vlan-interface120] ip address 192.168.120.10 255.255.255.0
+   ```[HP-Vlan-interface120] ip address "ip" "masque sous réseau"
    ```
    ```[HP-Vlan-interface120] quit
    ```
@@ -213,4 +207,6 @@ Elle couvre les points suivants :
 
 👉 Si tout est correct, la connexion doit s’établir en SSH avec l’utilisateur admin.
 
+4. Une fois SSH fonctionnel, il faut test un PING des machines physiques au Coeur de réseau, des différentes VM Nutanix Coeur de réseau.
 
+⚠️ Si le ping depuis la machine physique vers la VM Windows ne fonctionne pas : activer une règle dans les paramètres du Pare-Feu de Windows afin d'autoriser les pings entrants car il les bloque par défaut.
