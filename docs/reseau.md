@@ -67,7 +67,8 @@ Elle couvre les points suivants :
 
 4. Configurer les ports IRF :<br>
 
-   *** Rack4sw1 (Switch Master) IRF port configuration ***
+   *** Rack4sw1 (Switch Master) IRF port configuration ***<br>
+
    ```[Rack4sw1]interface Ten-GigabitEthernet 1/1/1
    ```
    ```[Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
@@ -89,7 +90,8 @@ Elle couvre les points suivants :
    ```[Rack4sw1]save force 
    ```
 
-   *** Rack4sw2 (Switch Slave) port configuration ***
+   *** Rack4sw2 (Switch Slave) port configuration ***<br>
+   
    ```[Rack6sw2]interface Ten-GigabitEthernet 2/1/1
    ```
    ```[Rack6sw2-Ten-GigabitEthernet2/1/1]shutdown
