@@ -17,4 +17,4 @@ Pour se connecter : <br>
 
 mot de passe de session <br>
 
-Adresse VLAN (120) Management : 192.168.120.0/24
+Adresse VLAN (120) Management : 10.10.120.0/24
