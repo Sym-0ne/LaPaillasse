@@ -66,19 +66,54 @@ Elle couvre les points suivants :
     ```
 
 4. Configurer les ports IRF :<br>
-   ```[HP] system-view
+
+   *** Rack4sw1 (Switch Master) IRF port configuration ***
+   ```[Rack4sw1]interface Ten-GigabitEthernet 1/1/1
    ```
-   ```[HP] irf-port 1/1
+   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
    ```
-   ```[HP-irf-port1/1] port group interface Ten-GigabitEthernet1/0/49
+   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]quit
    ``` 
-   ```[HP-irf-port1/1] quit
+   ```[Rack4sw1]irf-port 1/1
    ```
-   ```[HP] irf-port 2/1
+   ```[Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
    ```
-   ```[HP-irf-port2/1] port group interface Ten-GigabitEthernet2/0/49
+   ```[Rack4sw1-irf-port1/1]quit
    ```
-   ```[HP-irf-port2/1] quit
+   ```[Rack4sw1]interface Ten-GigabitEthernet 1/1/1
+   ```
+   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
+   ```
+   ```[Rack4sw1]irf-port-configuration active
+   ```
+   ```[Rack4sw1]save force 
+   ```
+
+   *** Rack4sw2 (Switch Slave) port configuration ***
+   ```[Rack6sw2]interface Ten-GigabitEthernet 2/1/1
+   ```
+   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]shutdown
+   ```
+   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]quit
+   ```
+
+   ```[Rack6sw2]irf-port 2/2
+   ```
+   ```[Rack6sw2-irf-port2/2]port group interface Ten-GigabitEthernet 2/1/1
+   ```
+   ```[Rack6sw2-irf-port2/2]quit
+   ```
+
+   ```[Rack6sw2]interface Ten-GigabitEthernet 2/1/1
+   ```
+   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]undo shutdown
+   ```
+   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]quit
+   ```
+
+   Note: Save the configuation before activating the port.
+
+   ```[Rack6sw2]save force 
    ```
 
 5. Activer la configuration IRF et redémarrer :
@@ -88,6 +123,15 @@ Elle couvre les points suivants :
    ```
    ```[HP] reboot
    ```
+
+   *** IRF verification ***
+
+   <Rack4sw1>display irf
+
+   Switch  Role   Priority  CPU-Mac         Description
+   *+1   Master  1         b8af-xxxx-xxxx  -----
+     2   Slave   1         b8af-xxxx-xxxx  -----
+
 ## 🌐 Étape 4 : Création d’un VLAN de management (VLAN 120)
 
 1. Créer le VLAN 120 :<br>
@@ -162,7 +206,7 @@ Elle couvre les points suivants :
 
 3. Depuis un poste client, tester l’accès SSH :
 
-```ssh admin@192.168.120.10
+```ssh admin@ip.vlan.management
 ```
 
 👉 Si tout est correct, la connexion doit s’établir en SSH avec l’utilisateur admin.
