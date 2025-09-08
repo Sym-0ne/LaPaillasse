@@ -17,4 +17,4 @@ Pour se connecter : <br>
 
 mot de passe de session <br>
 
-Adresse VLAN (120) Management : 192.168.111.0 (temporaire car probleme DMZ sur PHP IPAM) mais la vraie adressage ce sera 192.168.120.0/24
+Adresse VLAN (120) Management : 192.168.120.0/24
