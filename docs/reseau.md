@@ -30,7 +30,6 @@ Elle couvre les points suivants :
     
     ```
     <HP> reset saved-configuration
-    
     ```
 
    Si cette commande ne supprime pas correctement la conf, il faut les supprimés manuellement un par un : 
