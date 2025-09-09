@@ -113,6 +113,7 @@ Elle couvre les points suivants :
    ```
 
 5. Activer la configuration IRF et redémarrer :
+
    ```
    [HP] irf-port-configuration active
    [HP] save
@@ -121,10 +122,10 @@ Elle couvre les points suivants :
 
    *** IRF verification ***
 
-   <Rack4sw1>display irf
+   <Rack4sw1>display irf<br>
 
-   Switch  Role   Priority  CPU-Mac         Description
-   *+1   Master  1         b8af-xxxx-xxxx  -----
+   Switch  Role   Priority  CPU-Mac         Description<br>
+   *+1   Master  1         b8af-xxxx-xxxx  -----<br>
      2   Slave   1         b8af-xxxx-xxxx  -----
 
 ## 🌐 Étape 4 : Création d’un VLAN de management (VLAN 120)
@@ -161,6 +162,7 @@ Elle couvre les points suivants :
    ```
 
 2. Activer le service SSH (stelnet) :
+
    ```
    [HPSwitch] ssh server enable
    ```
