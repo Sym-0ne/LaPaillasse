@@ -18,3 +18,5 @@ Pour se connecter : <br>
 "nom de session"@lan.sio.lyceefulbert.fr <br>
 
 mot de passe de session <br>
+
+Adresse VLAN (120) Management : 10.10.120.0/24
