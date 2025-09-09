@@ -68,25 +68,25 @@ Elle couvre les points suivants :
 
    *** Rack4sw1 (Switch Master) IRF port configuration ***<br>
 
-   ```[Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-   ```
-   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
-   ```
-   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]quit
-   ``` 
-   ```[Rack4sw1]irf-port 1/1
-   ```
-   ```[Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
-   ```
-   ```[Rack4sw1-irf-port1/1]quit
-   ```
-   ```[Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-   ```
-   ```[Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
-   ```
-   ```[Rack4sw1]irf-port-configuration active
-   ```
-   ```[Rack4sw1]save force 
+      [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
+   
+      [Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
+   
+      [Rack4sw1-Ten-GigabitEthernet1/1/1]quit
+    
+      [Rack4sw1]irf-port 1/1
+   
+      [Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
+   
+      [Rack4sw1-irf-port1/1]quit
+   
+      [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
+      
+      [Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
+      
+      [Rack4sw1]irf-port-configuration active
+   
+      [Rack4sw1]save force 
    ```
 
    *** Rack4sw2 (Switch Slave) port configuration ***<br>
