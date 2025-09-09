@@ -9,7 +9,3 @@ COnfiguration des étendues réseaux en fonctions des VLANs (étendues dispo sur
 
 COnfiguration du DNS avec le nom de domaine etc sur l'Active Directory de la VM WIN NUTANIX qui sert d'AD 
 
-## Service de fichiers : 
-Voir tout les screens des étapes sur le tuto mis sur Teams 
-
-![alt text](image.png)
