@@ -11,3 +11,5 @@ COnfiguration du DNS avec le nom de domaine etc sur l'Active Directory de la VM 
 
 ## Service de fichiers : 
 Voir tout les screens des étapes sur le tuto mis sur Teams 
+
+![alt text](image.png)
