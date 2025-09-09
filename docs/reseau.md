@@ -28,9 +28,9 @@ Elle couvre les points suivants :
 
 1. Une fois démarré, supprimer la configuration existante :
     
-    ```
-    <HP> reset saved-configuration
-    ```
+   ```
+   <HP> reset saved-configuration
+   ```
 
    Si cette commande ne supprime pas correctement la conf, il faut les supprimés manuellement un par un : 
    
@@ -42,13 +42,13 @@ Elle couvre les points suivants :
 
    ```
    <HP> save force 
-    ```
+   ```
 
 3. Redémarrer :
 
-    ```
-    <HP> reboot
-    ```
+   ```
+   <HP> reboot
+   ```
 
 👉 Le switch redémarre avec la configuration d’usine.
 
@@ -56,6 +56,7 @@ Elle couvre les points suivants :
 
 1. Vérifier que les deux switchs ont la même version logicielle.
 2. Configurer l’ID IRF sur chaque switch :
+   
    ```
    <HP> system-view
    [HP] irf member 1 renumber 1   ← premier switch
@@ -73,16 +74,16 @@ Elle couvre les points suivants :
    *** Rack4sw1 (Switch Master) IRF port configuration ***<br>
 
    ```
-      [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-      [Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
-      [Rack4sw1-Ten-GigabitEthernet1/1/1]quit
-      [Rack4sw1]irf-port 1/1
-      [Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
-      [Rack4sw1-irf-port1/1]quit
-      [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-      [Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
-      [Rack4sw1]irf-port-configuration active
-      [Rack4sw1]save force 
+   [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
+   [Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
+   [Rack4sw1-Ten-GigabitEthernet1/1/1]quit
+   [Rack4sw1]irf-port 1/1
+   [Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
+   [Rack4sw1-irf-port1/1]quit
+   [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
+   [Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
+   [Rack4sw1]irf-port-configuration active
+   [Rack4sw1]save force 
    ```
 
    *** Rack4sw2 (Switch Slave) port configuration ***<br>
@@ -113,11 +114,9 @@ Elle couvre les points suivants :
 
 5. Activer la configuration IRF et redémarrer :
    ```
-      [HP] irf-port-configuration active
-   
-      [HP] save
-   
-      [HP] reboot
+   [HP] irf-port-configuration active
+   [HP] save
+   [HP] reboot
    ```
 
    *** IRF verification ***
@@ -131,26 +130,24 @@ Elle couvre les points suivants :
 ## 🌐 Étape 4 : Création d’un VLAN de management (VLAN 120)
 
 1. Créer le VLAN 120 :<br>
+
    ```
    [HP] vlan 120
-   
-      [HP-vlan120] quit
+   [HP-vlan120] quit
    ```
 2. Créer l’interface VLAN et attribuer une adresse IP libre :<br>
+
    ```
-      [HP] interface Vlan-interface 120
-   
-      [HP-Vlan-interface120] ip address "ip" "masque sous réseau"
-   
-      [HP-Vlan-interface120] quit
+   [HP] interface Vlan-interface 120
+   [HP-Vlan-interface120] ip address "ip" "masque sous réseau"
+   [HP-Vlan-interface120] quit
    ```
 3. Associer un port physique au VLAN 120 :<br>
+
    ```
-      [HP] interface GigabitEthernet1/0/1
-   
-      [HP-GigabitEthernet1/0/1] port link-type access
-   
-      [HP-GigabitEthernet1/0/1] port access vlan 120
+   [HP] interface GigabitEthernet1/0/1
+   [HP-GigabitEthernet1/0/1] port link-type access
+   [HP-GigabitEthernet1/0/1] port access vlan 120
    ```
 
 👉 Ce VLAN servira exclusivement pour l’administration.
@@ -158,6 +155,7 @@ Elle couvre les points suivants :
 ## 🔐 Étape 5 : Activer et sécuriser l’accès SSH
 
 1. Générer les clés RSA pour SSH :
+
    ```
    [HP] public-key local create rsa
    ```
@@ -171,11 +169,8 @@ Elle couvre les points suivants :
 
    ```
    [HP] local-user admin
-   
    [HP-luser-admin] password simple MonMotDePasseFort
-   
    [HP-luser-admin] service-type ssh
-   
    [HP-luser-admin] authorization-attribute level 3
    ```
    
@@ -183,11 +178,8 @@ Elle couvre les points suivants :
 
    ```
    [HP] user-interface vty 0 4
-   
    [HP-ui-vty0-4] authentication-mode scheme
-   
    [HP-ui-vty0-4] protocol inbound ssh
-   
    [HP-ui-vty0-4] quit
    ```
 
@@ -197,21 +189,21 @@ Elle couvre les points suivants :
 
 1. Vérifier l’état du stack IRF :
 
-```
-<HP> display irf
-```
+   ```
+   <HP> display irf
+   ```
 
 2. Vérifier l’adresse IP du VLAN de management :
 
-```
-<HP> display ip interface brief
-```
+   ```
+   <HP> display ip interface brief
+   ```
 
 3. Depuis un poste client, tester l’accès SSH :
 
-```
-ssh admin@ip.vlan.management
-```
+   ```
+   ssh admin@ip.vlan.management
+   ```
 
 👉 Si tout est correct, la connexion doit s’établir en SSH avec l’utilisateur admin.
 
