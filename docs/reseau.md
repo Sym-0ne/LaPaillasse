@@ -52,11 +52,12 @@ Elle couvre les points suivants :
 
 1. Vérifier que les deux switchs ont la même version logicielle.
 2. Configurer l’ID IRF sur chaque switch :
-   ```<HP> system-view
    ```
-   ```[HP] irf member 1 renumber 1   ← premier switch
-   ```
-   ```[HP] irf member 1 renumber 2   ← deuxième switch
+   <HP> system-view
+   
+   [HP] irf member 1 renumber 1   ← premier switch
+   
+   [HP] irf member 1 renumber 2   ← deuxième switch
    ```
 
 3. Sauvegarder et redémarrer :
@@ -68,6 +69,7 @@ Elle couvre les points suivants :
 
    *** Rack4sw1 (Switch Master) IRF port configuration ***<br>
 
+   ```
       [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
    
       [Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
@@ -98,31 +100,35 @@ Elle couvre les points suivants :
    ```[Rack6sw2-Ten-GigabitEthernet2/1/1]quit
    ```
 
-   ```[Rack6sw2]irf-port 2/2
    ```
-   ```[Rack6sw2-irf-port2/2]port group interface Ten-GigabitEthernet 2/1/1
-   ```
-   ```[Rack6sw2-irf-port2/2]quit
+   [Rack6sw2]irf-port 2/2
+   
+   [Rack6sw2-irf-port2/2]port group interface Ten-GigabitEthernet 2/1/1
+   
+   [Rack6sw2-irf-port2/2]quit
    ```
 
-   ```[Rack6sw2]interface Ten-GigabitEthernet 2/1/1
    ```
-   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]undo shutdown
-   ```
-   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]quit
+   [Rack6sw2]interface Ten-GigabitEthernet 2/1/1
+   
+   [Rack6sw2-Ten-GigabitEthernet2/1/1]undo shutdown
+   
+   [Rack6sw2-Ten-GigabitEthernet2/1/1]quit
    ```
 
    Note: Save the configuation before activating the port.
 
-   ```[Rack6sw2]save force 
+   ```
+   [Rack6sw2]save force 
    ```
 
 5. Activer la configuration IRF et redémarrer :
-   ```[HP] irf-port-configuration active
    ```
-   ```[HP] save
-   ```
-   ```[HP] reboot
+      [HP] irf-port-configuration active
+   
+      [HP] save
+   
+      [HP] reboot
    ```
 
    *** IRF verification ***
@@ -136,23 +142,26 @@ Elle couvre les points suivants :
 ## 🌐 Étape 4 : Création d’un VLAN de management (VLAN 120)
 
 1. Créer le VLAN 120 :<br>
-   ```[HP] vlan 120
    ```
-   ```[HP-vlan120] quit
+   [HP] vlan 120
+   
+      [HP-vlan120] quit
    ```
 2. Créer l’interface VLAN et attribuer une adresse IP libre :<br>
-   ```[HP] interface Vlan-interface 120
    ```
-   ```[HP-Vlan-interface120] ip address "ip" "masque sous réseau"
-   ```
-   ```[HP-Vlan-interface120] quit
+      [HP] interface Vlan-interface 120
+   
+      [HP-Vlan-interface120] ip address "ip" "masque sous réseau"
+   
+      [HP-Vlan-interface120] quit
    ```
 3. Associer un port physique au VLAN 120 :<br>
-   ```[HP] interface GigabitEthernet1/0/1
    ```
-   ```[HP-GigabitEthernet1/0/1] port link-type access
-   ```
-   ```[HP-GigabitEthernet1/0/1] port access vlan 120
+      [HP] interface GigabitEthernet1/0/1
+   
+      [HP-GigabitEthernet1/0/1] port link-type access
+   
+      [HP-GigabitEthernet1/0/1] port access vlan 120
    ```
 
 👉 Ce VLAN servira exclusivement pour l’administration.
@@ -160,33 +169,37 @@ Elle couvre les points suivants :
 ## 🔐 Étape 5 : Activer et sécuriser l’accès SSH
 
 1. Générer les clés RSA pour SSH :
-   ```[HP] public-key local create rsa
+   ```
+   [HP] public-key local create rsa
    ```
 
 2. Activer le service SSH (stelnet) :
-   ```[HPSwitch] ssh server enable
+   ```
+   [HPSwitch] ssh server enable
    ```
 
 3. Créer un utilisateur administrateur :
 
-   ```[HP] local-user admin
    ```
-   ```[HP-luser-admin] password simple MonMotDePasseFort
-   ```
-   ```[HP-luser-admin] service-type ssh
-   ```
-   ```[HP-luser-admin] authorization-attribute level 3
+   [HP] local-user admin
+   
+   [HP-luser-admin] password simple MonMotDePasseFort
+   
+   [HP-luser-admin] service-type ssh
+   
+   [HP-luser-admin] authorization-attribute level 3
    ```
    
 4. Configurer les sessions VTY pour n’autoriser que SSH :
 
-   ```[HP] user-interface vty 0 4
    ```
-   ```[HP-ui-vty0-4] authentication-mode scheme
-   ```
-   ```[HP-ui-vty0-4] protocol inbound ssh
-   ```
-   ```[HP-ui-vty0-4] quit
+   [HP] user-interface vty 0 4
+   
+   [HP-ui-vty0-4] authentication-mode scheme
+   
+   [HP-ui-vty0-4] protocol inbound ssh
+   
+   [HP-ui-vty0-4] quit
    ```
 
 👉 Ainsi, Telnet est désactivé et seul SSH est autorisé.
@@ -207,7 +220,8 @@ Elle couvre les points suivants :
 
 3. Depuis un poste client, tester l’accès SSH :
 
-```ssh admin@ip.vlan.management
+```
+ssh admin@ip.vlan.management
 ```
 
 👉 Si tout est correct, la connexion doit s’établir en SSH avec l’utilisateur admin.
