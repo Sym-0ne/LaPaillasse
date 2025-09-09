@@ -9,7 +9,8 @@ markdown_extensions:
 
 theme : 
   name : material
-  icon : material/plus-circle
+  icon:
+    annotation: material/arrow-right-circle
   palette:
     - scheme: default
       primary: indigo

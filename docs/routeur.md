@@ -26,9 +26,7 @@ interface GigabitEthernet0/0
  ip nat outside
  no shutdown
 ```
-4. Configurer la deuxième interface Gigabit0/1 (1) 
-{ .annotate }
-1. A noter qu'il faut configurer le port du switch coeur de réseau en mode trunk en conséquent
+4. Configurer la deuxième interface Gigabit0/1
 ```
 interface GigabitEthernet0/1
  no shutdown
