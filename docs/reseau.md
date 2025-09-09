@@ -27,7 +27,10 @@ Elle couvre les points suivants :
 ## 🔄 Réinitialisation de la configuration (Factory Reset)
 
 1. Une fois démarré, supprimer la configuration existante :
-    ```<HP> reset saved-configuration
+    
+    ```
+    <HP> reset saved-configuration
+    
     ```
 
    Si cette commande ne supprime pas correctement la conf, il faut les supprimés manuellement un par un : 
@@ -40,7 +43,8 @@ Elle couvre les points suivants :
     ```
 
 3. Redémarrer :
-    ```<HP> reboot
+    ```
+    <HP> reboot
     ```
 
 👉 Le switch redémarre avec la configuration d’usine.
