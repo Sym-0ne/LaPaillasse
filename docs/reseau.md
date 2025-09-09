@@ -34,14 +34,18 @@ Elle couvre les points suivants :
 
    Si cette commande ne supprime pas correctement la conf, il faut les supprimés manuellement un par un : 
    
-   ```<HP> delete "nom du fichier de conf à supprimer" 
-    ```
+   ```
+   <HP> delete "nom du fichier de conf à supprimer" 
+   ```
 
 2. Enregistrer : 
-   ```<HP> save force 
+
+   ```
+   <HP> save force 
     ```
 
 3. Redémarrer :
+
     ```
     <HP> reboot
     ```
@@ -54,15 +58,14 @@ Elle couvre les points suivants :
 2. Configurer l’ID IRF sur chaque switch :
    ```
    <HP> system-view
-   
    [HP] irf member 1 renumber 1   ← premier switch
-   
    [HP] irf member 1 renumber 2   ← deuxième switch
    ```
 
 3. Sauvegarder et redémarrer :
 
-    ```[HP] save
+    ```
+    [HP] save
     ```
 
 4. Configurer les ports IRF :<br>
@@ -71,48 +74,34 @@ Elle couvre les points suivants :
 
    ```
       [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-   
       [Rack4sw1-Ten-GigabitEthernet1/1/1]shutdown
-   
       [Rack4sw1-Ten-GigabitEthernet1/1/1]quit
-    
       [Rack4sw1]irf-port 1/1
-   
       [Rack4sw1-irf-port1/1]port group interface Ten-GigabitEthernet 1/1/1
-   
       [Rack4sw1-irf-port1/1]quit
-   
       [Rack4sw1]interface Ten-GigabitEthernet 1/1/1
-      
       [Rack4sw1-Ten-GigabitEthernet1/1/1]undo shutdown
-      
       [Rack4sw1]irf-port-configuration active
-   
       [Rack4sw1]save force 
    ```
 
    *** Rack4sw2 (Switch Slave) port configuration ***<br>
    
-   ```[Rack6sw2]interface Ten-GigabitEthernet 2/1/1
    ```
-   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]shutdown
-   ```
-   ```[Rack6sw2-Ten-GigabitEthernet2/1/1]quit
+   [Rack6sw2]interface Ten-GigabitEthernet 2/1/1
+   [Rack6sw2-Ten-GigabitEthernet2/1/1]shutdown
+   [Rack6sw2-Ten-GigabitEthernet2/1/1]quit
    ```
 
    ```
    [Rack6sw2]irf-port 2/2
-   
    [Rack6sw2-irf-port2/2]port group interface Ten-GigabitEthernet 2/1/1
-   
    [Rack6sw2-irf-port2/2]quit
    ```
 
    ```
    [Rack6sw2]interface Ten-GigabitEthernet 2/1/1
-   
    [Rack6sw2-Ten-GigabitEthernet2/1/1]undo shutdown
-   
    [Rack6sw2-Ten-GigabitEthernet2/1/1]quit
    ```
 
