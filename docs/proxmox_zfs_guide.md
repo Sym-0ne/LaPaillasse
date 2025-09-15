@@ -1,9 +1,9 @@
-**Guide détaillé Proxmox + ZFS RAID-Z1 pour BTS SIO**
+# Guide détaillé Proxmox + ZFS RAID-Z1
 
 ---
 
 # 1. Introduction
-Ce guide fournit une documentation complète et détaillée sur l'utilisation de **Proxmox VE** avec **ZFS RAID-Z1**, adaptée aux étudiants en BTS SIO. Il explique les concepts, le fonctionnement, les avantages, et propose des instructions pratiques pour la mise en place et la gestion de l’infrastructure.
+Ce guide fournit une documentation complète et détaillée sur l'utilisation de **Proxmox VE** avec **ZFS RAID-Z1**. Il explique les concepts, le fonctionnement, les avantages, et propose des instructions pratiques pour la mise en place et la gestion de l’infrastructure.
 
 ---
 
@@ -38,7 +38,7 @@ RAID-Z1 est l’équivalent de RAID 5 :
 - **Parité distribuée** : répartie sur tous les disques pour reconstruction automatique.
 - **Performance** : lecture rapide grâce au striping ; écriture légèrement plus lente que RAID 10 à cause du calcul de parité.
 
----
+---. Il explique les concepts, le f
 
 # 3. Fonctionnement détaillé de ZFS RAID-Z1
 
@@ -63,7 +63,7 @@ RAID-Z1 est l’équivalent de RAID 5 :
 
 ---
 
-# 4. Pré-requis matériels pour BTS SIO
+# 4. Pré-requis matériels 
 - **Disques** : 4 disques identiques pour éviter déséquilibre et erreurs.
 - **RAM** : minimum 8Go, 1Go conseillé par To de stockage pour ZFS.
 - **Processeur** : supporte la virtualisation (Intel VT-x ou AMD-V).
@@ -159,7 +159,6 @@ L’association **Proxmox VE + ZFS RAID-Z1** offre un environnement complet et p
 - Gérer un stockage sécurisé et tolérant aux pannes.
 - Expérimenter avec des fonctionnalités avancées (snapshots, compression, pools).
 
-C’est un choix idéal pour un **projet BTS SIO**, combinant apprentissage pratique et concepts utilisés en entreprise moderne.
 
 ---
 
