@@ -103,10 +103,11 @@ Cliquez sur Installer. Le serveur redémarrera automatiquement.
 ## Étape 4 : Vérifier l’installation
 
 ### 1. Confirmer le rôle Active Directory :
-    Après le redémarrage, connectez-vous et ouvrez le Gestionnaire de Serveur.
-    Vérifiez que le rôle AD DS est installé et fonctionne correctement.
+Après le redémarrage, connectez-vous et ouvrez le Gestionnaire de Serveur.
+Vérifiez que le rôle AD DS est installé et fonctionne correctement.
+
 ### 2. Tester le domaine :
-    Ouvrez l’outil Active Directory Users and Computers.
+Ouvrez l’outil Active Directory Users and Computers.
 
 ![Verif install](images/AD/ad14.png)
 
