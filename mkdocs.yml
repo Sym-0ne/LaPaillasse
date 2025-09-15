@@ -1,7 +1,8 @@
 site_name: My Docs
 markdown_extensions:
   - pymdownx.emoji:
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_generator: 
+        !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed
   - attr_list
   - md_in_html
