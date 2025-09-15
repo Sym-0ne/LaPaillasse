@@ -1,8 +1,8 @@
 # Base De Données
 
-## Instalation
+## Installation
 
-Pour commencer, mettez a jour votre système :
+Pour commencer, mettez à jour votre système :
 ```
 sudo apt update
 sudo apt full-upgrade
@@ -56,7 +56,7 @@ Info (1)
 
 Changer le mot de passe root si besoin : 
 ```
-ou already have your root account protected, so you can safely answer 'n'
+you already have your root account protected, so you can safely answer 'n'
  
 Change the root password? [Y/n]: n
 ```
@@ -73,7 +73,7 @@ Remove anonymous users? [Y/n]: y
 
 <div class="annotate" markdown>
 
-Désactivez le login a distance via le compte root (1)
+Désactivez le login a distance via le compte root si besoin (1)
 
 </div>
 
