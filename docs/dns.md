@@ -1,15 +1,4 @@
-# Configuration des services sur les VM Nutanix (Windows et Linux)
-
-## DHCP
-
-Mise en place d’un port sur le switch cœur de réseau relié au Huawei, afin que le poste client obtienne automatiquement une adresse IP lorsqu’il est branché sur le réseau.  
-Configuration des étendues réseaux en fonction des VLANs (étendues disponibles sur IPAM).
-
----
-
-## DNS
-
-### Installation du service
+# Installer et configurer un serveur DNS sur Windows Server.
 
 Dans l’assistant, sélectionnez **Installation basée sur un rôle ou une fonctionnalité** :  
 ![Assistant d’installation](images/DNS/1.png)
