@@ -31,10 +31,3 @@ interface GigabitEthernet0/0
 interface GigabitEthernet0/1
  no shutdown
 ```
-<div class="annotate" markdown>
-
-> Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-
-</div>
-
-1.  :man_raising_hand: I'm an annotation!

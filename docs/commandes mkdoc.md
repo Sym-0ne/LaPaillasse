@@ -39,7 +39,13 @@ def bonjour():
 
 :smile: :rocket: :+1: ":le smiley:"
 
+"<"div class="annotate" markdown>
 
+La Début de la phrase, (1) la fin de la phrase.
+
+"<"/div>
+
+1. Contenue de l'anotation
 
 
 
