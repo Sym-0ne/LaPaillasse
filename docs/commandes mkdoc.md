@@ -50,6 +50,13 @@ La Début de la phrase, (1) la fin de la phrase.
 
 1. Contenue de l'anotation
 
+<div class="annotate" markdown>
+
+La Début de la phrase, (1) la fin de la phrase.
+
+</div>
+
+1. Contenue de l'anotation
 
 
 
