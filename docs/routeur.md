@@ -1,5 +1,4 @@
 # Documentation de configuration du routeur #
-
 1. Première étape : Réinitialiser le routeur a sa configuration d'origine sans le mot de passe admin. 
 
 ```
@@ -31,8 +30,7 @@ interface GigabitEthernet0/0
 interface GigabitEthernet0/1
  no shutdown
 ```
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-    text__, images, ... basically anything that can be expressed in Markdown.
+<div class="annotate" markdown>
+(1)
+</div>
+1. A noter que le port du switch coeur de réseau relié au routeur doit être configurer en mode trunk 
