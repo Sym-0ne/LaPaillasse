@@ -1,4 +1,4 @@
-# 📘 Tutoriel – Mise en place de LACP sur HP A5500 (Comware)
+# Mise en place de LACP sur HP A5500
 
 ## 🔹 1. Introduction
 **LACP (Link Aggregation Control Protocol)** est défini dans la norme IEEE 802.3ad.  

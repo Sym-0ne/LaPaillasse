@@ -1,4 +1,4 @@
-# Configuration du routeur #
+# Configuration du routeur Cisco 1921 #
 ## Configuration initial
 1. Première étape : Réinitialiser le routeur a sa configuration d'origine sans le mot de passe admin. 
 

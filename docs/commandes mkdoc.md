@@ -1,4 +1,4 @@
-# Commandes de syntaxe sur mkdocs
+# Commandes de syntaxe
 
 La page fonctionne de cette manière : le résultat en premier et après ce qu'il faut rajouter pour obtenir le résultat.
 # Titre niveau 1 "#"

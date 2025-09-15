@@ -1,4 +1,4 @@
-# Guide détaillé Proxmox + ZFS RAID-Z1
+# Proxmox + ZFS RAID-Z1
 
 ---
 
