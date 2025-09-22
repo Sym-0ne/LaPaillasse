@@ -3,3 +3,5 @@
 4,5 TO pour les VM's
 1 TO ISO ET OVA
 500 GO pour l'OS PROXMOX 
+
+![alt text](SchemaRAIDLVM.png)
