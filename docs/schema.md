@@ -1,4 +1,4 @@
 # Schema de notre infrastructure
 
 ## Schema réseaux
-![alt text](images/reseaux/schema-reseaux.png)
+![](/docs/Diagrames/infra%2029_09_25.drawio)
