@@ -1,6 +1,6 @@
 site_name: LaPaillasse 
 plugins:
-    - drawio_file
+    - drawio
 markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
