@@ -3,7 +3,7 @@
 ## Installation
 
 Pour commencer, mettez à jour votre système :
-```python hl_lines="2 4"
+```python hl_lines="2"
 sudo apt update
 sudo apt full-upgrade
 ```
