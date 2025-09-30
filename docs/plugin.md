@@ -54,6 +54,7 @@ plugins:
 ### Ajout du fichier drawio dans une page.
 
 Pour finir il ne reste plus qu'à insérer le fichier avec l'extention ".drawio" dans notre fichier makdown a la manière d'une image
+
 ```
 ![](fichier.drawio)
 ```
